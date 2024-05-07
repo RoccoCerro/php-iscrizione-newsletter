@@ -1,8 +1,17 @@
 <?php
 session_start();
 
-$result = $_SESSION["result"];
+var_dump($_SESSION);
+
+if (isset($_SESSION['result'])) {
+  $result = $_SESSION["result"];
+  session_destroy();
+} else {
+  header("Location: ./index.php");
+}
+
 // var_dump($result);
+
 
 ?>
 
