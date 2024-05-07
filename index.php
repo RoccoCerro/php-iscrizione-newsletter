@@ -1,8 +1,11 @@
 <?php
   $email = $_POST["email"] ?? "";
-  var_dump($email);
+  // var_dump($email);
 
-  var_dump(email_is_valid($email));
+  include __DIR__ . "/utilities.php";
+
+  // var_dump(email_is_valid($email));
+  // var_dump("DIR: ".__DIR__);
 ?>
 
 <!DOCTYPE html>
