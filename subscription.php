@@ -63,7 +63,7 @@ if (isset($_SESSION['result'])) {
     }
     ?>
     <form action="">
-      <button actio>
+      <button>
       Ritorna
       </button>
 
