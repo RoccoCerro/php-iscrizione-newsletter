@@ -2,14 +2,6 @@
   $email = $_POST["email"] ?? "";
   var_dump($email);
 
-  function email_is_valid($email){
-    if(strpos($email, "@") && strpos($email, ".")){
-      return true;
-    }else{
-      return false;
-    }
-  }
-
   var_dump(email_is_valid($email));
 ?>
 
