@@ -1,9 +1,28 @@
 <?php
+  // Includo il file utilities 
+  include __DIR__ . "/partials/utilities.php";
+  
+  // Avvio la sessione
+  session_start();
+
+  // Recupero l'email
   $email = $_POST["email"] ?? "";
+
+  if(email_is_valid($email) === true){
+
+    $result = true;
+    header('Location: ./subscription.php');
+  }else{
+
+    $result = false;
+    header('Location: ./subscription.php');
+  }
+  
   // var_dump($email);
 
-  include __DIR__ . "/partials/utilities.php";
+  $_SESSION['result'] = $result;
 
+  // var_dump($result);
   // var_dump(email_is_valid($email));
   // var_dump("DIR: ".__DIR__);
 ?>
@@ -31,7 +50,7 @@
         </form>
         <div class="alert alert-dark w-50 mt-5 col-12" role="alert">
           <?php
-          if(email_is_valid($email) === true){
+          if($result === true){
             ?>
             Successo!
             <?php
